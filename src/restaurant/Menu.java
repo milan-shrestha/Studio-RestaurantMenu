@@ -13,4 +13,20 @@ public class Menu {
         this.listOfDishes = new ArrayList<>();
         this.lastUpdated = new Date();
     }
+
+    public ArrayList<MenuItem> getListOfDishes() {
+        return listOfDishes;
+    }
+
+    public void setListOfDishes(ArrayList<MenuItem> listOfDishes) {
+        this.listOfDishes = listOfDishes;
+    }
+
+    public Date getLastUpdated() {
+        return lastUpdated;
+    }
+
+    public void setLastUpdated(Date lastUpdated) {
+        this.lastUpdated = lastUpdated;
+    }
 }
