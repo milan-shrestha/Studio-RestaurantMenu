@@ -1,5 +1,7 @@
 package restaurant;
 
+import java.util.Objects;
+
 public class MenuItem {
 
     private String name;
@@ -55,5 +57,31 @@ public class MenuItem {
 
     public void setNew(Boolean aNew) {
         isNew = aNew;
+    }
+
+    @Override
+    public String toString() {
+        return "MenuItem{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", price=" + price +
+                ", category='" + category + '\'' +
+                ", isNew=" + isNew +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MenuItem menuItem = (MenuItem) o;
+        return description.equals(menuItem.description) &&
+                category.equals(menuItem.category) &&
+                isNew.equals(menuItem.isNew);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(description, category, isNew);
     }
 }
